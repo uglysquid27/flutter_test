@@ -34,16 +34,17 @@ class _HomeViewState extends State<HomeView> {
               children: [
                 SizedBox(height: 40,),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Recently Played', style: Theme.of(context).textTheme.headline6),
+                      Text('Recently Played', style: Theme.of(context).textTheme.headline6,),
+                      SizedBox(width: 20,),
                       Row(
                         children: [
                           Icon(Icons.history),
-                          SizedBox(width: 16,),
+                          SizedBox(width: 20,),
                           Icon(Icons.settings)
                         ],
                       )
@@ -65,6 +66,8 @@ class _HomeViewState extends State<HomeView> {
                       AlbumCard(),
                       SizedBox(width: 15),
                       AlbumCard(),
+                      SizedBox(width: 15),
+                      AlbumCard(),
                     ],
                   ),
                 )
@@ -75,19 +78,26 @@ class _HomeViewState extends State<HomeView> {
       ],
     ));
   }
+}
 
-  Column AlbumCard() {
+class AlbumCard extends StatelessWidget {
+  const AlbumCard({
+    super.key, 
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          "asset/album1.jpeg",
-                          width: 120,
-                          height: 120,
-                        ),
-                        SizedBox(height: 10,),
-                        Text("Best mode"),
-                      ],
-                    );
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Image.asset(
+          "asset/album1.jpeg",
+          width: 120,
+          height: 120,
+        ),
+        SizedBox(height: 10,),
+        Text("Best mode"),
+      ],
+    );
   }
 }
