@@ -82,7 +82,7 @@ class _HomeViewState extends State<HomeView> {
 
 class AlbumCard extends StatelessWidget {
   const AlbumCard({
-    super.key, 
+    super.key,  
   });
 
   @override
